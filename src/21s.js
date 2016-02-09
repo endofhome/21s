@@ -2,6 +2,7 @@ var Game = function() {
   this.suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades'];
   this.ranks = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
   this.deck = [];
+  this.players = ['Sam', 'the Dealer'];
 };
 
 Game.prototype.createDeck = function() {
