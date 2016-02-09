@@ -5,10 +5,10 @@ describe('Game', function() {
 
   beforeEach(function() {
     game = new Game();
+    game.createDeck();
   });
 
   it('models a deck of 52 cards', function() {
-    game.createDeck();
     expect(game.deck.length).toEqual(52);
   });
 
@@ -18,4 +18,3 @@ describe('Game', function() {
   });
 
 });
-
