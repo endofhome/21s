@@ -27,17 +27,17 @@ describe('Game', function() {
       spyOn(Math, "random").and.returnValue(0.3);
     });
 
-    it("4 of Hearts is on top when math.random() returns 0.3", function() {
+    it("4 of Hearts is on top when Math.random() returns 0.3", function() {
       game.shuffleDeck(game.deck);
       expect(game.deck[0]).toEqual('4 of Hearts');
     });
 
-    it("3 of Diamonds is on the bottom when math.random() returns 0.3", function() {
+    it("3 of Diamonds is on the bottom when Math.random() returns 0.3", function() {
       game.shuffleDeck(game.deck);
       expect(game.deck[51]).toEqual('3 of Diamonds');
     });
 
-    it("Ace of Spades is twelfth card in to the stack when math.random() returns 0.3", function() {
+    it("Ace of Spades is twelfth card in to the stack when Math.random() returns 0.3", function() {
       game.shuffleDeck(game.deck);
       expect(game.deck[11]).toEqual('Ace of Spades');
     });
