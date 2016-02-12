@@ -4,7 +4,9 @@ describe('Game', function() {
   var game;
 
   beforeEach(function() {
-    game = new Game();
+    player1 = { name: 'Sam', hand: [] };
+    player2 = { name: 'the Dealer', hand: [] };
+    game = new Game(player1, player2);
     game.createDeck();
   });
 
@@ -15,8 +17,8 @@ describe('Game', function() {
     });
 
     it('there are two players, Sam and the Dealer', function() {
-      expect(game.players[0]).toEqual('Sam');
-      expect(game.players[1]).toEqual('the Dealer');
+      expect(game.players[0].name).toEqual('Sam');
+      expect(game.players[1].name).toEqual('the Dealer');
     });
 
   });

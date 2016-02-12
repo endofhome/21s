@@ -1,8 +1,8 @@
 "use strict";
 
-var Game = function() {
+var Game = function(player1, player2) {
   this.deck = [];
-  this.players = ['Sam', 'the Dealer'];
+  this.players = [player1, player2];
 };
 
 Game.prototype.createDeck = function() {
