@@ -39,4 +39,15 @@ Game.prototype.dealFirstHand = function() {
   };
 };
 
+Game.prototype.calcCardScore = function(cardString) {
+  var specialScores = { 'Jack':10, 'Queen':10, 'King':10, 'Ace':11 },
+      card = cardString.split(' ')[0],
+      score = 0;
+  if (card in specialScores) {
+    score = specialScores[card];
+  } else { score = (parseInt(cardString.split(' ')[0], 10));
+  };
+  return score;
+};
+
 module.exports = Game;
