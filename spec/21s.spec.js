@@ -60,8 +60,40 @@ describe('Game', function() {
 
   describe('Calculating the value of cards', function() {
     
-    it('numbered card', function() {
+    it('a two', function() {
       expect(game.calcCardScore('2 of Hearts')).toEqual(2);
+    });
+
+    it('a three', function() {
+      expect(game.calcCardScore('3 of Hearts')).toEqual(3);
+    });
+
+    it('a four', function() {
+      expect(game.calcCardScore('4 of Hearts')).toEqual(4);
+    });
+
+    it('a five', function() {
+      expect(game.calcCardScore('5 of Hearts')).toEqual(5);
+    });
+            
+    it('a six', function() {
+      expect(game.calcCardScore('6 of Hearts')).toEqual(6);
+    });
+
+    it('a seven', function() {
+      expect(game.calcCardScore('7 of Hearts')).toEqual(7);
+    });
+
+    it('an eight', function() {
+      expect(game.calcCardScore('8 of Hearts')).toEqual(8);
+    });
+
+    it('a nine', function() {
+      expect(game.calcCardScore('9 of Hearts')).toEqual(9);
+    });
+
+    it('a ten', function() {
+      expect(game.calcCardScore('10 of Hearts')).toEqual(10);
     });
 
     it('a Jack', function() {
