@@ -8,8 +8,8 @@ var Game = function(player1, player2) {
 Game.prototype.createDeck = function() {
   var suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades'],
       ranks = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'],
-      i = 0,
-      j = 0;
+      i,
+      j;
   for (i = 0; i < 4; i++) {
     for (j = 0; j < 13; j++) {
       this.deck.push((ranks[j]) + ' of ' + (suits[i]));
@@ -48,6 +48,20 @@ Game.prototype.calcCardScore = function(cardString) {
   } else { score = (parseInt(cardString.split(' ')[0], 10));
   };
   return score;
+};
+
+Game.prototype.scoreHand = function(player) {
+  var hand = player.hand,
+      points = [],
+      score = 0,
+      i;
+  for (i = 0; i < hand.length ; i++) {
+    points.push(this.calcCardScore(hand[i]));
+  };
+  points.reduce(function(previousValue, currentValue, currentIndex, array) {
+    score = previousValue + currentValue;
+  });
+  return score
 };
 
 module.exports = Game;

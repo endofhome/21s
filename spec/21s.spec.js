@@ -113,4 +113,22 @@ describe('Game', function() {
     });
 
   });
+
+  describe('Calculating the value of a hand', function() {
+      
+    beforeEach(function() {
+      spyOn(Math, 'random').and.returnValue(0.3);
+      game.shuffleDeck();
+      game.dealFirstHand();
+    });
+
+    it('Player 1 first hand (4 of Hearts and Ace of Clubs) is 15', function() {
+      expect(game.scoreHand(player1)).toEqual(15);
+    });
+
+    it('Player 2 first hand (7 of Diamonds and 5 of Spades) is 12', function() {
+      expect(game.scoreHand(player2)).toEqual(12);
+    });
+
+  });
 });
