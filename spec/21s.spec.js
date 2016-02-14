@@ -129,6 +129,13 @@ describe('Game', function() {
     it('Player 2 first hand (7 of Diamonds and 5 of Spades) is 12', function() {
       expect(game.scoreHand(player2)).toEqual(12);
     });
+  });
 
+  describe('Perfect 21 score wins', function() {
+
+    it('if a player scores 21 they have won the game', function() {
+      game.players[0].hand = ['Ace of Spades', 'Queen of Hearts'];
+      expect(game.scoreHand(player1)).toEqual('Sam has won!');
+    });
   });
 });
