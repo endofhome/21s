@@ -61,11 +61,15 @@ Game.prototype.scoreHand = function(player) {
   points.reduce(function(previousValue, currentValue, currentIndex, array) {
     score = previousValue + currentValue;
   });
+  return (checkIfPerfectScore(player, score));
+};
+
+var checkIfPerfectScore = function(player, score) {
   if (score === 21) {
     return player.name + ' has won!';
   } else {
     return score
-  };
+  };  
 };
 
 module.exports = Game;
