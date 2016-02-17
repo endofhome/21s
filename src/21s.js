@@ -68,10 +68,8 @@ Game.prototype.scoreHand = function(player) {
 Game.prototype.checkIfPerfectScore = function(player, score) {
   if (score === 21) {
     this.winner = player;
-    return score;
-  } else {
-    return score;
-  };  
+  } 
+  return score;  
 };
 
 module.exports = Game;
