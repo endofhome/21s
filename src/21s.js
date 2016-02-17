@@ -3,6 +3,7 @@
 var Game = function(player1, player2) {
   this.deck = [];
   this.players = [player1, player2];
+  this.winner = null;
 };
 
 Game.prototype.createDeck = function() {
@@ -61,14 +62,15 @@ Game.prototype.scoreHand = function(player) {
   points.reduce(function(previousValue, currentValue, currentIndex, array) {
     score = previousValue + currentValue;
   });
-  return (checkIfPerfectScore(player, score));
+  return (this.checkIfPerfectScore(player, score));
 };
 
-var checkIfPerfectScore = function(player, score) {
+Game.prototype.checkIfPerfectScore = function(player, score) {
   if (score === 21) {
-    return player.name + ' has won!';
+    this.winner = player;
+    return score;
   } else {
-    return score
+    return score;
   };  
 };
 

@@ -10,7 +10,6 @@ describe('Game', function() {
     game.createDeck();
   });
 
-
   describe('Initialisation', function() {
 
     it('models a deck of 52 cards', function() {
@@ -133,9 +132,15 @@ describe('Game', function() {
 
   describe('Perfect 21 score wins', function() {
 
+    it('the game has a winner', function() {
+      expect(game.winner).toEqual(null);
+    });
+
     it('if a player scores 21 they have won the game', function() {
       game.players[0].hand = ['Ace of Spades', 'Queen of Hearts'];
-      expect(game.scoreHand(player1)).toEqual('Sam has won!');
+      game.scoreHand(player1);
+      expect(game.winner).toEqual(player1);
     });
   });
+
 });
