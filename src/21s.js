@@ -37,7 +37,7 @@ Game.prototype.dealFirstHand = function() {
   for (i = 0; i < 4; i += 2) {
     this.players[0].hand.push(this.deck.shift(i));
     this.players[1].hand.push(this.deck.shift((i + 1)));
-  };
+  }
 };
 
 Game.prototype.calcCardScore = function(cardString) {
@@ -47,7 +47,7 @@ Game.prototype.calcCardScore = function(cardString) {
   if (card in specialScores) {
     score = specialScores[card];
   } else { score = (parseInt(cardString.split(' ')[0], 10));
-  };
+  }
   return score;
 };
 
@@ -58,7 +58,7 @@ Game.prototype.scoreHand = function(player) {
       i;
   for (i = 0; i < hand.length ; i++) {
     points.push(this.calcCardScore(hand[i]));
-  };
+  }
   points.reduce(function(previousValue, currentValue, currentIndex, array) {
     score = previousValue + currentValue;
   });
@@ -70,6 +70,10 @@ Game.prototype.checkIfPerfectScore = function(player, score) {
     this.winner = player;
   } 
   return score;  
+};
+
+Game.prototype.draw = function(player) {
+  player.hand.push(this.deck.shift(0));
 };
 
 module.exports = Game;

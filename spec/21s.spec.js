@@ -143,4 +143,18 @@ describe('Game', function() {
     });
   });
 
+  describe('drawing from the deck', function() {
+
+    beforeEach(function() {
+      spyOn(Math, 'random').and.returnValue(0.3);
+      game.shuffleDeck();
+      game.dealFirstHand();
+    });
+
+    it('a player can draw the top card from the deck', function() {
+      game.draw(player1);
+      expect(game.players[0].hand).toEqual(['4 of Hearts', 'Ace of Clubs', '4 of Diamonds']);
+    });
+  });
+
 });
