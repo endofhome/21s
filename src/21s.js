@@ -73,7 +73,11 @@ Game.prototype.checkIfPerfectScore = function(player, score) {
 };
 
 Game.prototype.draw = function(player) {
-  player.hand.push(this.deck.shift(0));
+  if (this.scoreHand(player) < 17) {
+    player.hand.push(this.deck.shift(0));
+  } else {
+    return 'Sorry, you cannot draw another card while your score is 17 or more';
+  }
 };
 
 module.exports = Game;

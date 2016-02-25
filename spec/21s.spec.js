@@ -155,6 +155,11 @@ describe('Game', function() {
       game.draw(player1);
       expect(game.players[0].hand).toEqual(['4 of Hearts', 'Ace of Clubs', '4 of Diamonds']);
     });
+
+    it('a player can not draw another hand if their current hand totals 17 or more', function() {
+      game.draw(player1);
+      expect(game.draw(player1)).toEqual('Sorry, you cannot draw another card while your score is 17 or more');
+    });
   });
 
 });
