@@ -1,4 +1,4 @@
-var Game = require('../src/21s.js');
+var Game = require('../src/game.js');
 
 describe('Game', function() {
   var game;
