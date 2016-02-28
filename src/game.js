@@ -80,4 +80,14 @@ Game.prototype.draw = function(player) {
   }
 };
 
+Game.prototype.selectOtherPlayer = function(player) {
+  var result;
+  if (player === this.players[0]) {
+    result = this.players[1];
+  } else {
+    result = this.players[0];
+  }
+  return result;
+};
+
 module.exports = Game;

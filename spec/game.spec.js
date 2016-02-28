@@ -162,4 +162,15 @@ describe('Game', function() {
     });
   });
 
+  describe('selecting the other player', function() {
+  
+    it('the Dealer is the other player when Sam is the subject', function() {
+      expect(game.selectOtherPlayer(player1)).toEqual(player2);
+    });
+
+    it('Sam is the other player when the Dealer is the subject', function() {
+      expect(game.selectOtherPlayer(player2)).toEqual(player1);
+    });
+
+  });
 });
