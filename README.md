@@ -10,7 +10,9 @@ To shuffle the deck I implemented the the [Fisher-Yates shuffle](https://bost.oc
 ###Usage
 
 Clone this repo.
-At present there is no GUI so run the code via Node REPL or the Chrome console.
+
+At present there is no GUI so run the code via the Node REPL or the Chrome console.
+
 More usage instructions coming soon.
 
 ###Tests
